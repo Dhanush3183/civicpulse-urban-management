@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicPulse - Urban Issue Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CivicPulse</h1>
+        <p>Intelligent Event-Driven Urban Issue Management</p>
+    </header>
+
+    <main>
+        <!-- Auth Section -->
+        <section id="auth-section" class="card">
+            <h2>Citizen Portal Login</h2>
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <div class="button-group">
+                <button onclick="login()">Login</button>
+                <button onclick="register()" class="secondary">Register</button>
+            </div>
+            <p id="auth-msg" class="msg"></p>
+        </section>
+
+        <!-- Dashboard Section (Hidden until logged in) -->
+        <section id="dashboard-section" class="card" style="display: none;">
+            <h2>Report a Civic Issue</h2>
+            <input type="text" id="issue-title" placeholder="Issue Title (e.g., Broken Streetlight)">
+            <input type="text" id="issue-desc" placeholder="Detailed Description">
+            <input type="text" id="issue-loc" placeholder="Location (e.g., Bowrampet Campus)">
+            <select id="issue-cat">
+                <option value="Infrastructure">Infrastructure</option>
+                <option value="Sanitation">Sanitation</option>
+                <option value="Traffic">Traffic</option>
+            </select>
+            <button onclick="reportIssue()">Submit Issue</button>
+            <p id="dashboard-msg" class="msg"></p>
+
+            <hr>
+            
+            <h2>Live Municipal Issues</h2>
+            <button onclick="loadIssues()" class="secondary">Refresh Board</button>
+            <div id="issues-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Team:</strong> P Dhanush, M Rohith, Ananya Sinha | <strong>Guide:</strong> Dr. Srikanth Cherukuvada</p>
+        <p>KLH CSE Bowrampet Campus - SOA Project</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
